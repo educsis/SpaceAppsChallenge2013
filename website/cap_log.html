@@ -1,0 +1,49 @@
+<script type="text/javascript">
+
+events = [
+  {time: 3, message: "Good morning Captain."},
+  {time: 5, message: "You've died of dysentery."},
+]
+
+var date = new Date();
+date.toISOString();
+
+function add_info_event(data){
+// TODO: add info event
+}
+
+function add_all_info_events(){
+  //TODO for all add all events
+  //var timeoutID = window.setTimeout(func, delay, [param1, param2, ...]);
+  var timeoutID = window.setTimeout(add_events, 200, data);
+}
+
+</script>
+<style>
+body {
+  background: #000;
+  color: #FFF;
+}
+.captain_log {
+  background: rgba(255,255,255,0.3);
+}
+.log_date {
+  color:#999;
+  color:#fe9900;
+  font-weight: bold;
+}
+.log_info {
+  color:#EEE;
+  color:#ca6666;
+}
+</style>
+
+<div class="captain_log">
+<h1>Captain's log</h1>
+<ul>
+<li><span class="log_date">2013-04-20T22:29:01.888Z</span> &ndash; <span class="log_info">You are stranded on the red planet.</span></li>
+<li><span class="log_date">2013-04-20T22:29:01.888Z</span> &ndash; <span class="log_info">You are stranded on the red planet.</span></li>
+<li><span class="log_date">2013-04-20T22:29:01.888Z</span> &ndash; <span class="log_info">You are stranded on the red planet.</span></li>
+<li><span class="log_date">2013-04-20T22:29:01.888Z</span> &ndash; <span class="log_info">You are stranded on the red planet.</span></li>
+</ul>
+</div>
