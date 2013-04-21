@@ -54,7 +54,7 @@ body {
 .position_updates {
     height: 250px;
 }
-#ship_planner {
+svg#ship_planner {
     position: absolute;
     left: 0;
 }

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>4A Demo</title>
+  <script type='text/javascript' src='libs/jquery.js'></script>
+  <script type='text/javascript' src='libs/jquery.bpopup.min.js'></script>
+  <script type='text/javascript' src='libs/d3.js'></script>
+  <script type='text/javascript' src='js/emergency.js'></script>
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <link rel="stylesheet" type="text/css" href="css/emergency.css">
+  <link rel="stylesheet" type="text/css" href="css/960_16_col.css">
+
+  <style type='text/css'>
+
+  </style>
+  <script type='text/javascript'>//<![CDATA[
+  window.onload=function(){
+
+  }//]]>
+
+  </script>
+
+
+</head>
+<body>
+  <div class="container_16">
+    <div class="grid_16 progress_display">
+      <div class="position_updates"></div>
+    </div>
+    <div class="grid_4 sidebar">
+      <div class="main_status">
+        <div id="fuel_pb" class="progressbar">Fuel <progress value="70" max="100" /></div>
+        <div id="water_pb" class="progressbar">Water <progress value="10" max="100" /></div>
+        <div id="oxigen_pb" class="progressbar">Oxigen <progress value="50" max="100" /></div>
+      </div>
+
+    </div>
+	
+	
+	<div id = 'emergency_a' class="grid_6 panel_a " >Space ship</div>
+
+	<div id = 'emergency_b' class="grid_6 panel_b " >
+		Solve Emergency
+		<input id = 'solve_1' class='b-close' type='button' value = 'Solve'/>
+	</div>
+</div>
+
+
+
+
+<div id='pop_solve' >
+	<img src="assets/earth.svg" height="400" />
+	<input id = 'resolution' class='b-close' type='button' value = 'Solve'/>
+	You Survive!!
+</div>
+
+
+</body>
+
+
+</html>
+

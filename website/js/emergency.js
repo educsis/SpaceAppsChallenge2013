@@ -1,7 +1,5 @@
 $(document).ready(function(){
 
-	$('#emergency_a').hide();
-	$('#emergency_b').hide();
 
 	//Enable when main page done.
 	//setTimeout(alert,1000);
@@ -17,7 +15,7 @@ $(document).ready(function(){
 
 
 	function changeEmergencyScreen(){
-		console.log('hola');
+		window.location.replace("emergency.html");
 	}
 
 
