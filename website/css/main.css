@@ -36,6 +36,15 @@ body {
     width: 100%;
 }
 
+#position_bar {
+    height: 20px;
+    top: 40px;
+    z-index: -1;
+    width: 98%;
+    position: relative;
+    margin: auto;
+}
+
 /* Captain's log and Newsfeed */
 
 #caplog, #nfeed{

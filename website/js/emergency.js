@@ -2,7 +2,7 @@ $(document).ready(function(){
 
 
 	//Enable when main page done.
-	setTimeout(alert,10000);
+	setTimeout(alert,20000);
 	//setTimeout(alert,10000);
 	$('#pop').click(changeEmergencyScreen);
 	function alert(){

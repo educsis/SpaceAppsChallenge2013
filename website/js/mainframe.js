@@ -20,7 +20,7 @@ $(document).ready(function(){
   }
 
   for (var i = cap_log_list.length - 1; i >= 0; i--) {
-    setTimeout(append_caplog, i * 5000, cap_log_list[i]);
+    setTimeout(append_caplog, i * 10000, cap_log_list[i]);
   };
 
 
@@ -29,7 +29,7 @@ $(document).ready(function(){
   }
 
   for (var i = newsfeed_list.length - 1; i >= 0; i--) {
-    setTimeout(append_newsfeed, i * 5000, newsfeed_list[i]);
+    setTimeout(append_newsfeed, i * 10000, newsfeed_list[i]);
   };
 
 
