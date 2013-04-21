@@ -18,8 +18,19 @@
   
   $(document).ready(function(){
 	
-	$("#solve_1").click(solveEmergency);
+	$("#water").click(solveEmergency);
+	$("#extinguisher").click(solveEmergency2);
+	$("#water").hover(handlerIn, handlerOut);
 	
+	
+	function handlerIn(){
+		$("#quote_water").hide();
+		$("#empty_water").show();
+	}
+	function handlerOut(){
+		$("#empty_water").hide();
+		$("#quote_water").show();
+	}
 	function solveEmergency(){
 		$('.fire1').bPopup({
             speed: 450,
@@ -27,8 +38,6 @@
 			
         });
 	}
-	$("#solve_2").click(solveEmergency2);
-	
 	function solveEmergency2(){
 		$('.fire2').bPopup({
             speed: 450,
@@ -63,19 +72,48 @@
     </div>
 	
 	
-	<div id = 'emergency_a' class="grid_6 panel_a " >
+	<div id = 'emergency_a' class="grid_6  semi_transparent " >
 		<h3 class='status_title'> WARNING LOCATION</h3>
-		<img src="assets/shuttlealert.svg" height="450" width='330' />
+		<div class='grid_6 postfix_0 suffix_5'>
+			<img src="assets/alert.svg" id = 'alert'   height="40" width='40' />
+			<span class='quote'>Fire due to a short circuit near the oxygen<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;near the oxygen generator</span>
+		</div>
+		
+		<img src="assets/shuttlealert.svg" height="400" width='320' />
 	</div>
 
-	<div id = 'emergency_b' class="grid_6 panel_b " >
+	<div id = 'emergency_b' class="grid_6  semi_transparent " >
 		<h3 class='status_title'> POSSIBLE SOLUTIONS</h3>
-		<input id = 'solve_1'  type='button' value = 'Solve'/>
+		
+		<div class='grid_6 postfix_0 suffix_5'>
+			<img src="assets/water.svg"       id = 'water'           height="40" width='40' /> 
+			<span id="empty_water" class='empty'>LOW SUPPLY!!</span>
+			<span id='quote_water' class='quote'>Throw some water!!</span>
+		</div>
+		<div class='grid_6 postfix_0 suffix_5'>
+			<img src="assets/extinguisher.svg" id = 'extinguisher'   height="40" width='40' />
+			<span class='quote'>Send an astronaut with extinguisher.</span>
+		</div>
+		<div class='grid_6 postfix_0 suffix_5'>
+			<img src="assets/mechkit.svg"      id = 'solve_1'        height="40" width='40' />
+			<span class='quote'>Seal the room and wait.</span>
+		</div>
+		<div class='grid_6 postfix_0 suffix_5'>
+			<img src="assets/oxygen.svg"       id = 'solve_1'        height="40" width='40' />
+			<span class='quote'>Cut the oxygen supply</span>
+		</div>
+		<div class='grid_6 postfix_0 suffix_5'>
+			<img src="assets/antennae.svg"     id = 'solve_1'        height="40" width='40' />.
+			<span class='quote'>ASK FOR HELP</span>
+		</div>
+		<div class='grid_6 postfix_0 suffix_5'>
+			<img src="assets/antennae.svg"     id = 'solve_1'        height="40" width='40' />
+			<span class='quote'>EVACUATE SHIP</span>
+		</div>
+
 	</div>
 	
 </div>
-
-
 
 
 <div id='solve_pop' class = 'container_16 fire1' >
@@ -99,12 +137,11 @@
 <div id='solve_pop' class = 'container_16 fire2' >
 	<h3 class='status_title'>OUTCOME</h3>
 	<div id ='image_pop' class='grid_16'>
-		<img src="assets/outcomefire.svg" height="400" width='800' />
+		<img src="assets/outcomesmoke.svg" height="400" width='800' />
 	</div>
 	<div class='content grid_10 prefix_0' >
 		<p>
-			You waited for the fire to go out but it didn't. The problem persist.
-			<br>Try another option soon. This emergency is building.
+			CONGRATULATIONS! The fire has died. Emergency averted.
 		</p>
 	</div>
 	<div class='grid_5 prefix_10 '>
