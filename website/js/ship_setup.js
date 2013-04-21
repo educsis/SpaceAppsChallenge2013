@@ -11,7 +11,8 @@ function setupShipPlanning() {
         .attr("height", 620);
 
     SVG.append("svg:g")
-        .attr("id", "ship");
+        .attr("id", "ship")
+        .attr("transform", "translate(270, 182.5)");
 
     var ship = d3.select("#ship");
 
@@ -28,8 +29,8 @@ function setupShipPlanning() {
             .attr("y", (75 * y))
             .attr("width", 75)
             .attr("height", 75)
-            .attr("fill", "#eee")
-            .attr("stroke", "#999");
+            .attr("fill", "#006D75")
+            .attr("stroke", "#00858f");
     }
 
     SVG.append("svg:rect")
@@ -44,30 +45,30 @@ function setupShipPlanning() {
           .on("drag", move)
           .on("dragend", soltar));
 
+    var dragTarget;
     function move(){
-    this.parentNode.appendChild(this);
-    var dragTarget = d3.select(this);
-    dragTarget
-        .attr("x", function(){return d3.event.dx + parseInt(dragTarget.attr("x"))})
-        .attr("y", function(){return d3.event.dy + parseInt(dragTarget.attr("y"))});
+        this.parentNode.appendChild(this);
+        dragTarget = d3.select(this);
+        dragTarget
+            .attr("x", function(){return d3.event.dx + parseInt(dragTarget.attr("x"))})
+            .attr("y", function(){return d3.event.dy + parseInt(dragTarget.attr("y"))});
     }
 
+    var pos;
     function soltar() {
         this.parentNode.appendChild(this);
-        var dragTarget = d3.select(this);
+        dragTarget = d3.select(this);
         
-        var posX = parseInt(event.pageX / 75);
-        var posY = parseInt(event.pageY / 75);
-       
-        
-        if ((posX < 4) && (posY < 5)) {
-            grid[posX][posY] = true;
+        pos = d3.mouse(this);
+        pos[0] = parseInt((pos[0] - 270) / 75);
+        pos[1] = parseInt((pos[1] - 182.5) / 75);
+
+        if ((pos[0] < 4) && (pos[1] < 5) && (pos[0] >= 0) && (pos[1] >= 0)) {
+            grid[pos[0]][pos[1]] = true;
             
           dragTarget
-            .attr("x", (posX * 75))
-            .attr("y", (posY * 75));
-            
-            console.log(grid[0][0]);
+            .attr("x", (pos[0] * 75) + 270)
+            .attr("y", (pos[1] * 75) + 182.5);
         }
     }
 }
@@ -75,62 +76,3 @@ function setupShipPlanning() {
 $(document).ready( function() {
     //setupShipPlanning();
 });
-/*
-var ship = d3.select("#ship");
-
-for (var i = 0; i < 4; i++) {
-    for (var j = 0; j < 5; j++) {
-        createGrid(i, j);
-        grid[i][j] = false;
-    }
-}
-
-function createGrid(x, y) {
-    ship.append("svg:rect")
-        .attr("x", (75 * x))
-        .attr("y", (75 * y))
-        .attr("width", 75)
-        .attr("height", 75)
-        .attr("fill", "#eee")
-        .attr("stroke", "#999");
-}
-
-SVG.append("svg:rect")
-    .attr("id", "blueSquare")
-    .attr("x", 350)
-    .attr("y", 150)
-    .attr("width", 75)
-    .attr("height", 75)
-    .attr("fill", "blue")
-    .style("cursor", "pointer")
-    .call(d3.behavior.drag()
-          .on("drag", move)
-          .on("dragend", soltar));
-
-function move(){
-    this.parentNode.appendChild(this);
-    var dragTarget = d3.select(this);
-    dragTarget
-        .attr("x", function(){return d3.event.dx + parseInt(dragTarget.attr("x"))})
-        .attr("y", function(){return d3.event.dy + parseInt(dragTarget.attr("y"))});
-}
-
-function soltar() {
-    this.parentNode.appendChild(this);
-    var dragTarget = d3.select(this);
-    
-    var posX = parseInt(event.pageX / 75);
-    var posY = parseInt(event.pageY / 75);
-   
-    
-    if ((posX < 4) && (posY < 5)) {
-        grid[posX][posY] = true;
-        
-      dragTarget
-        .attr("x", (posX * 75))
-        .attr("y", (posY * 75));
-        
-        console.log(grid[0][0]);
-    }
-    
-}*/
