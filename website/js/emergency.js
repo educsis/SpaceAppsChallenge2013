@@ -1,6 +1,7 @@
 $(document).ready(function(){
 
-
+	$('#emergency_a').hide();
+	$('#emergency_b').hide();
 
 	setTimeout(alert,1000);
 	
@@ -8,13 +9,15 @@ $(document).ready(function(){
 		$('#popDiv').bPopup({
             speed: 450,
             transition: 'slideDown',
-			onClose: function() { console.log("hola"); }
+			onClose: changeEmergencyScreen
         });
 	}
+	$('#pop').click(changeEmergencyScreen);
+	
 	
 	function changeEmergencyScreen(){
-	
+		console.log('hola');
 	}		
-
+	
 
 })
