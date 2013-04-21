@@ -6,7 +6,7 @@ $(document).ready(function(){
 
 	function alert(){
 		$('#popDiv').bPopup({
-            speed: 450,
+            speed: 300,
             transition: 'slideDown',
 			onClose: changeEmergencyScreen
         });
@@ -17,6 +17,4 @@ $(document).ready(function(){
 	function changeEmergencyScreen(){
 		window.location.replace("emergency.html");
 	}
-
-
-})
+});

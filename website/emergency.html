@@ -14,10 +14,24 @@
   <style type='text/css'>
 
   </style>
-  <script type='text/javascript'>//<![CDATA[
-  window.onload=function(){
-
-  }//]]>
+  <script type='text/javascript'>
+  
+  
+	setTimeout(alert,1000);
+	
+	function alert(){
+		$('#solve_pop').bPopup({
+            speed: 450,
+            transition: 'slideDown',
+			
+        });
+	}
+	$('#resolution').click(solveEmergency);
+	
+	
+	function solveEmergency(){
+		console.log('hola');
+	}	
 
   </script>
 
@@ -44,15 +58,20 @@
 		Solve Emergency
 		<input id = 'solve_1' class='b-close' type='button' value = 'Solve'/>
 	</div>
+	
 </div>
 
 
 
 
-<div id='pop_solve' >
-	<img src="assets/earth.svg" height="400" />
-	<input id = 'resolution' class='b-close' type='button' value = 'Solve'/>
-	You Survive!!
+<div id='solve_pop' class = 'container_16' >
+	<div id ='image_pop' class='grid_16'>
+		<img src="assets/outcomefire.svg" height="300" width='600' />
+	</div>
+	<div class='grid_2 prefix_12 suffix_3'>
+		<input id = 'resolution' class='b-close button_pop' type='button' value = 'Solve'/>
+	</div>
+	
 </div>
 
 
