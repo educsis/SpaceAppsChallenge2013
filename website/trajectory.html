@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>4A Demo</title>
+  <script type='text/javascript' src='libs/jquery.js'></script>
+  <script type='text/javascript' src='http://code.jquery.com/ui/1.10.2/jquery-ui.js'></script>
+  <script type='text/javascript' src='libs/jquery.bpopup.min.js'></script>
+  <script type='text/javascript' src='libs/d3.js'></script>
+  <script type='text/javascript' src='js/emergency.js'></script>
+  <link rel="stylesheet" type="text/css" href="css/emergency.css">
+  <link rel="stylesheet" type="text/css" href="css/960_16_col.css">
+  <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css">
+
+  <style type='text/css'>
+  body{
+    background-image: url('assets/spacebg.jpg');
+    background-attachment: fixed;
+  }
+  .progress_display{
+    background-color: #0FF;
+    height: 100px;
+    margin-bottom: 20px;
+  }
+  .sidebar {
+    background-color: #FF0;
+  }
+  .panel_a {
+    background-color: #0F0;
+    min-height: 500px;
+  }
+  .panel_b {
+    background-color: #F00;
+    min-height: 500px;
+  }
+  .position_updates{
+    height: 250px;
+  }
+  </style>
+<style>
+	#earth{
+		position:absolute;
+		top:200px;
+		left:120px;
+	}
+	#mars{
+		position:absolute;
+		top:200px;
+		left:600px;
+	}
+</style>
+
+
+<script type='text/javascript'>//<![CDATA[
+window.onload=function(){
+
+}//]]>
+
+</script>
+
+
+</head>
+<body>
+  <div class="container_16">
+    <div class="grid_16 progress_display">
+      <div class="position_updates"></div>
+    </div>
+    <div class="grid_4 sidebar">Sidebar</div>
+    <div class="grid_12 panel_a" style="position:relative;">
+		<canvas id="canvas" style="height:500px;width:100%;"></canvas>
+		<img id="earth" src="assets/earth.svg" />
+		<img id="mars" src="assets/mars.svg" />
+		<div class="grid_6">
+			<table>
+				<tr>
+					<td><label>Speed</label></td>
+					<td><div id="force_slider" style="width:260px;"></div></td>
+				</tr>
+				<tr>
+					<td><label>Angle</label></td>
+					<td><div id="angle_slider" style="width:260px;"></div></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
+
+</body>
+
+<script>
+	var canvas = document.getElementById('canvas');
+	var context = canvas.getContext('2d');
+	var speed = 10,angleOffset = 0;
+	
+	function polarToCart(angle,r){
+		var coords = {
+			x:r*Math.cos(angle),
+			y:r*Math.sin(angle)
+		};
+		return coords;
+	}
+	
+	function trajectory(angle){
+		return angle*speed;
+	}
+	
+	function showTrajectory(center){
+		context.moveTo(center.x,center.y);
+		context.beginPath();
+		context.clearRect(0,0,context.canvas.width,context.canvas.height);
+		for(angle=0;angle<=360*2;angle+=0.1){
+			var traj = trajectory(angle-angleOffset,speed);
+			var cartPoint = polarToCart(angle,traj);
+			context.lineTo(center.x-cartPoint.x,center.y-cartPoint.y);
+		}
+		context.stroke();
+	}
+	
+	var canvasCenter = {
+		x:70,
+		y:context.canvas.height/2,
+	}
+	showTrajectory(canvasCenter);
+	
+	$(document).ready(function(){
+		$('#force_slider').slider({
+			min:10,
+			max:50,
+			slide:function(ev,ui){
+				speed = ui.value;
+				showTrajectory(canvasCenter);
+			}
+		});
+		$('#angle_slider').slider({
+			min:0,
+			max:360,
+			slide:function(ev,ui){
+				angleOffset = ui.value;
+				showTrajectory(canvasCenter);
+			}
+		});
+	});
+</script>
+</html>
+
