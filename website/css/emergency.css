@@ -21,3 +21,14 @@
 	color: white;
 	padding: 5px;
 }
+
+ .quote{
+	color: white;
+
+}
+
+.empty{
+	background-color:red;
+	display:none;
+	color: white;
+}

@@ -2,7 +2,7 @@ $(document).ready(function(){
 
   cap_log_list = ['<li class="caplog"><span class="log_date">T22:29:01.888Z</span><span class="log_info">Situation normal, everything is working as expected.</span></li>',
   '<li class="caplog"><span class="log_date">T22:29:01.888Z</span><span class="log_info">Situation normal, everything is working as expected.</span></li>',
-  '<li class="caplog log_warning"><span class="log_date">T22:29:01.888Z</span><span class="log_info">Astronaut B broke his leg.</span></li>',
+  '<li class="caplog log_warning"><span class="log_date">T22:29:01.888Z</span><span class="log_info">There is a fire on the cargo bay.</span></li>',
   '<li class="caplog log_plant"><span class="log_date">T22:29:01.888Z</span><span class="log_info">Plant 20 has hatched.</span></li>',
   ];
 

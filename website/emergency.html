@@ -10,6 +10,10 @@
   <link rel="stylesheet" type="text/css" href="css/main.css">
   <link rel="stylesheet" type="text/css" href="css/emergency.css">
   <link rel="stylesheet" type="text/css" href="css/960_16_col.css">
+  <script type='text/javascript' src='js/ship_setup.js'></script>
+
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <link rel="stylesheet" type="text/css" href="css/ship.css">
 
   <style type='text/css'>
 
@@ -18,8 +22,19 @@
   
   $(document).ready(function(){
 	
-	$("#solve_1").click(solveEmergency);
+	$("#water").click(solveEmergency);
+	$("#extinguisher").click(solveEmergency2);
+	$("#water").hover(handlerIn, handlerOut);
 	
+	
+	function handlerIn(){
+		$("#quote_water").hide();
+		$("#empty_water").toggle();
+	}
+	function handlerOut(){
+		$("#empty_water").hide();
+		$("#quote_water").toggle();
+	}
 	function solveEmergency(){
 		$('.fire1').bPopup({
             speed: 450,
@@ -27,8 +42,6 @@
 			
         });
 	}
-	$("#solve_2").click(solveEmergency2);
-	
 	function solveEmergency2(){
 		$('.fire2').bPopup({
             speed: 450,
@@ -50,32 +63,73 @@
 </head>
 <body>
   <div class="container_16">
-    <div class="grid_16 progress_display">
-      <div class="position_updates"></div>
+    <div class="grid_16 progress_display semi_transparent">
+      <div class="position_updates">
+        <img id="viz_earth" src="assets/earth.svg" height="85" alt="Earth"/>
+        <img id="viz_iss" src="assets/iss.svg" height="35" alt="Earth"/>
+        <img id="viz_moon" src="assets/moon.svg" height="45" alt="Earth"/>
+        <img id="viz_mars" src="assets/mars.svg" height="65" alt="Earth"/>
+      </div>
     </div>
     <div class="grid_4 sidebar">
       <div class="main_status">
-        <div id="fuel_pb" class="progressbar">Fuel <progress value="70" max="100" /></div>
-        <div id="water_pb" class="progressbar">Water <progress value="10" max="100" /></div>
-        <div id="oxigen_pb" class="progressbar">Oxigen <progress value="50" max="100" /></div>
+        <h3 class="status_title">Main Status</h3>
+        <div id="fuel_pb" class="progressbar"><img src="assets/fuel.svg" height="35" alt="Fuel"/><progress value="70" max="100" class="good" /></div>
+        <div id="water_pb" class="progressbar"><img src="assets/water.svg" height="35" alt="Water"/> <progress value="10" max="100" class="critical" /></div>
+        <div id="oxigen_pb" class="progressbar"><img src="assets/oxygen.svg" height="35" alt="Oxygen"/><progress value="50" max="100" class="warning" /></div>
+      </div>
+
+      <div class="crew_status">
+        <h3 class="status_title">Crew Health &amp; Mood</h3>
+
       </div>
 
     </div>
+
 	
 	
-	<div id = 'emergency_a' class="grid_6 panel_a " >
+	<div id = 'emergency_a' class="grid_6  semi_transparent " >
 		<h3 class='status_title'> WARNING LOCATION</h3>
-		<img src="assets/shuttlealert.svg" height="450" width='330' />
+		<div class='grid_6 postfix_0 suffix_5'>
+			<img src="assets/alert.svg" id = 'alert'   height="40" width='40' />
+			<span class='quote'>Fire due to a short circuit near the oxygen<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;near the oxygen generator</span>
+		</div>
+		
+		<img src="assets/shuttlealert.svg" height="400" width='320' />
 	</div>
 
-	<div id = 'emergency_b' class="grid_6 panel_b " >
+	<div id = 'emergency_b' class="grid_6  semi_transparent " >
 		<h3 class='status_title'> POSSIBLE SOLUTIONS</h3>
-		<input id = 'solve_1'  type='button' value = 'Solve'/>
+		
+		<div class='grid_6 postfix_0 suffix_5'>
+			<img src="assets/water.svg"       id = 'water'           height="40" width='40' /> 
+			<span id="empty_water" class='empty'>LOW SUPPLY!!</span>
+			<span id='quote_water' class='quote'>Throw some water!!</span>
+		</div>
+		<div class='grid_6 postfix_0 suffix_5'>
+			<img src="assets/extinguisher.svg" id = 'extinguisher'   height="40" width='40' />
+			<span class='quote'>Send an astronaut with extinguisher.</span>
+		</div>
+		<div class='grid_6 postfix_0 suffix_5'>
+			<img src="assets/mechkit.svg"      id = 'solve_1'        height="40" width='40' />
+			<span class='quote'>Seal the room and wait.</span>
+		</div>
+		<div class='grid_6 postfix_0 suffix_5'>
+			<img src="assets/oxygen.svg"       id = 'solve_1'        height="40" width='40' />
+			<span class='quote'>Cut the oxygen supply</span>
+		</div>
+		<div class='grid_6 postfix_0 suffix_5'>
+			<img src="assets/antennae.svg"     id = 'solve_1'        height="40" width='40' />.
+			<span class='quote'>ASK FOR HELP</span>
+		</div>
+		<div class='grid_6 postfix_0 suffix_5'>
+			<img src="assets/evacuate.svg"     id = 'solve_1'        height="40" width='40' />
+			<span class='quote'>EVACUATE SHIP</span>
+		</div>
+
 	</div>
 	
 </div>
-
-
 
 
 <div id='solve_pop' class = 'container_16 fire1' >
@@ -99,12 +153,11 @@
 <div id='solve_pop' class = 'container_16 fire2' >
 	<h3 class='status_title'>OUTCOME</h3>
 	<div id ='image_pop' class='grid_16'>
-		<img src="assets/outcomefire.svg" height="400" width='800' />
+		<img src="assets/outcomesmoke.svg" height="400" width='800' />
 	</div>
 	<div class='content grid_10 prefix_0' >
 		<p>
-			You waited for the fire to go out but it didn't. The problem persist.
-			<br>Try another option soon. This emergency is building.
+			CONGRATULATIONS! The fire has died. Emergency averted.
 		</p>
 	</div>
 	<div class='grid_5 prefix_10 '>
