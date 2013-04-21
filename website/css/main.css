@@ -120,3 +120,7 @@ svg#ship_planner {
     position: absolute;
     left: 0;
 }
+.progressbar progress {
+transition: all 2s;
+-webkit-transition: all 2s; /* Safari */
+}
