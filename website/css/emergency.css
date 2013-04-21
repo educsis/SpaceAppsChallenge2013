@@ -1,4 +1,15 @@
-#popDiv, #pop_solve{
+#popDiv{
 	display:none;
+	
+}
+#solve_pop{
+	background-color:#051c2d;
+
+	display:none;
+	padding: 10;
+}
+
+.button_pop{
+	background-color:#2e547;
 }
 

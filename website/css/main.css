@@ -5,8 +5,18 @@ body {
 
 /* Sidebar Styles */
 .sidebar {
+    box-sizing: border-box;
     background-color: #00262e;
     color: #EEE;
+    border: solid 1px #518bc9;
+}
+.status_title {
+    margin: 0;
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
+    text-align: center;
+    background-color: #053a4b;
+
 }
 
 #visual {
