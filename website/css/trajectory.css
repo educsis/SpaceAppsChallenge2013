@@ -1,0 +1,51 @@
+.canvas_element{
+	position:absolute;
+}
+#earth{
+	top:200px;
+	left:50px;
+}
+#mars{
+	top:200px;
+	left:600px;
+	width:90px;
+	height:90px;
+}
+#moon{
+	top:125px;
+	left:80px;
+	width:50px;
+	height:50px;
+}
+#space_station{
+	top:280px;
+	left:30px;
+	width:30px;
+	height:30px;
+}
+.slider{
+	margin-left:20px;
+}
+.slider_label{
+	color:white;
+}
+.ui-slider{
+	border-radius:0;
+	background:#0B4E5A !important;
+	border:1px solid black !important;
+	height:20px;
+}
+.ui-slider-handle{
+	border-radius:0;
+	background:#EB5E00 !important;
+	border:1px solid white !important;
+	top:0 !important;
+	height:18px;
+	width:40px !important;
+}
+#trajectory_success{
+	display:none;
+	position:absolute;
+	right:5px;
+	top:125px;
+}
