@@ -2,6 +2,9 @@ body {
     background-image: url('../assets/spacebg.jpg');
     background-attachment: fixed;
 }
+#visual {
+    position: relative;
+}
 .progressbar progress {
     width: 150px;
     margin-right: 14px;
@@ -36,4 +39,8 @@ body {
 }
 .position_updates {
     height: 250px;
+}
+#ship_planner {
+    position: absolute;
+    left: 0;
 }
