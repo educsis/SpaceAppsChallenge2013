@@ -33,17 +33,91 @@ function setupShipPlanning() {
             .attr("stroke", "#00858f");
     }
 
-    SVG.append("svg:rect")
-    .attr("id", "blueSquare")
-    .attr("x", 100)
-    .attr("y", 100)
-    .attr("width", 75)
-    .attr("height", 75)
-    //.attr("fill", "blue")
-    .style("cursor", "pointer")
-    .call(d3.behavior.drag()
-          .on("drag", move)
-          .on("dragend", soltar));
+    function createWater () {
+        SVG.append("svg:rect")
+        .attr("id", "blueSquare")
+        .attr("x", 642.5)
+        .attr("y", 200)
+        .attr("width", 75)
+        .attr("height", 75)
+        .attr("fill", "url('#water_box')")
+        .style("cursor", "pointer")
+        .call(d3.behavior.drag()
+              .on("drag", move)
+              .on("dragend", soltar));
+    }
+    function createFuel () {
+        SVG.append("svg:rect")
+        .attr("id", "blueSquare")
+        .attr("x", 742.5)
+        .attr("y", 200)
+        .attr("width", 75)
+        .attr("height", 75)
+        .attr("fill", "url('#fuel_box')")
+        .style("cursor", "pointer")
+        .call(d3.behavior.drag()
+              .on("drag", move)
+              .on("dragend", soltar));
+    }
+    function createOxygen () {
+        SVG.append("svg:rect")
+        .attr("id", "blueSquare")
+        .attr("x", 842.5)
+        .attr("y", 200)
+        .attr("width", 75)
+        .attr("height", 75)
+        .attr("fill", "url('#oxygen_box')")
+        .style("cursor", "pointer")
+        .call(d3.behavior.drag()
+              .on("drag", move)
+              .on("dragend", soltar));
+    }
+    function createPlantfood () {
+        SVG.append("svg:rect")
+        .attr("id", "blueSquare")
+        .attr("x", 642.5)
+        .attr("y", 300)
+        .attr("width", 75)
+        .attr("height", 75)
+        .attr("fill", "url('#plantfood_box')")
+        .style("cursor", "pointer")
+        .call(d3.behavior.drag()
+              .on("drag", move)
+              .on("dragend", soltar));
+    }
+    function createCannedfood () {
+        SVG.append("svg:rect")
+        .attr("id", "blueSquare")
+        .attr("x", 742.5)
+        .attr("y", 300)
+        .attr("width", 75)
+        .attr("height", 75)
+        .attr("fill", "url('#cannedfood_box')")
+        .style("cursor", "pointer")
+        .call(d3.behavior.drag()
+              .on("drag", move)
+              .on("dragend", soltar));
+    }
+    function createMedicalkit () {
+        SVG.append("svg:rect")
+        .attr("id", "blueSquare")
+        .attr("x", 842.5)
+        .attr("y", 300)
+        .attr("width", 75)
+        .attr("height", 75)
+        .attr("fill", "url('#medicalkit_box')")
+        .style("cursor", "pointer")
+        .call(d3.behavior.drag()
+              .on("drag", move)
+              .on("dragend", soltar));
+    }
+    createWater();
+    createFuel();
+    createOxygen();
+    createPlantfood();
+    createCannedfood();
+    createMedicalkit();
+    
 
 
     var dragTarget;
