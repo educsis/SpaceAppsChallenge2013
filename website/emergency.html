@@ -16,22 +16,33 @@
   </style>
   <script type='text/javascript'>
   
-  
-	setTimeout(alert,1000);
+  $(document).ready(function(){
 	
-	function alert(){
-		$('#solve_pop').bPopup({
+	$("#solve_1").click(solveEmergency);
+	
+	function solveEmergency(){
+		$('.fire1').bPopup({
             speed: 450,
             transition: 'slideDown',
 			
         });
 	}
-	$('#resolution').click(solveEmergency);
+	$("#solve_2").click(solveEmergency2);
+	
+	function solveEmergency2(){
+		$('.fire2').bPopup({
+            speed: 450,
+            transition: 'slideDown',
+			
+        });
+	}
+	});
+	
+
 	
 	
-	function solveEmergency(){
-		console.log('hola');
-	}	
+	
+	
 
   </script>
 
@@ -52,11 +63,14 @@
     </div>
 	
 	
-	<div id = 'emergency_a' class="grid_6 panel_a " >Space ship</div>
+	<div id = 'emergency_a' class="grid_6 panel_a " >
+		<h3 class='status_title'> WARNING LOCATION</h3>
+		<img src="assets/shuttlealert.svg" height="450" width='330' />
+	</div>
 
 	<div id = 'emergency_b' class="grid_6 panel_b " >
-		Solve Emergency
-		<input id = 'solve_1' class='b-close' type='button' value = 'Solve'/>
+		<h3 class='status_title'> POSSIBLE SOLUTIONS</h3>
+		<input id = 'solve_1'  type='button' value = 'Solve'/>
 	</div>
 	
 </div>
@@ -64,16 +78,41 @@
 
 
 
-<div id='solve_pop' class = 'container_16' >
+<div id='solve_pop' class = 'container_16 fire1' >
+	<h3 class='status_title'>OUTCOME</h3>
 	<div id ='image_pop' class='grid_16'>
-		<img src="assets/outcomefire.svg" height="300" width='600' />
+		<img src="assets/outcomefire.svg" height="400" width='800' />
 	</div>
-	<div class='grid_2 prefix_12 suffix_3'>
-		<input id = 'resolution' class='b-close button_pop' type='button' value = 'Solve'/>
+	<div class='content grid_10 prefix_0' >
+		<p>
+			You waited for the fire to go out but it didn't. The problem persist.
+			<br>Try another option soon. This emergency is building.
+		</p>
+	</div>
+	<div class='grid_5 prefix_10 '>
+		<input id = 'resolution' class='b-close button_pop' type='button' value = 'TO MAIN'/>
+		<input id = 'resolution' class='b-close button_pop' type='button' value = 'TRY AGAIN'/>
 	</div>
 	
 </div>
 
+<div id='solve_pop' class = 'container_16 fire2' >
+	<h3 class='status_title'>OUTCOME</h3>
+	<div id ='image_pop' class='grid_16'>
+		<img src="assets/outcomefire.svg" height="400" width='800' />
+	</div>
+	<div class='content grid_10 prefix_0' >
+		<p>
+			You waited for the fire to go out but it didn't. The problem persist.
+			<br>Try another option soon. This emergency is building.
+		</p>
+	</div>
+	<div class='grid_5 prefix_10 '>
+		<input id = 'main' class='b-close button_pop' type='button' value = 'TO MAIN'/>
+		
+	</div>
+	
+</div>
 
 </body>
 
