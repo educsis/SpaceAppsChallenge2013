@@ -2,12 +2,15 @@
 <html>
 <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>4A Demo</title>
-  <script type='text/javascript' src='/js/lib/dummy.js'></script>
-  <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+  <title>Red Mission - Demo</title>
+  <script type='text/javascript' src='/jquery-2.0.0.js'></script>
   <link rel="stylesheet" type="text/css" href="960_16_col.css">
 
   <style type='text/css'>
+  body{
+    background-image: url('assets/spacebg.jpg');
+    background-attachment: fixed;
+  }
   .progress_display{
     background-color: #0FF;
     height: 100px;
@@ -45,7 +48,14 @@ window.onload=function(){
     <div class="grid_16 progress_display">
       <div class="position_updates"></div>
     </div>
-    <div class="grid_4 sidebar">Sidebar</div>
+    <div class="grid_4 sidebar">
+      <div class="main_status">
+        <div class="fuel_pb progressbar">Fuel <progress value="70" max="100" /></div>
+        <div class="water_pb progressbar">Water <progress value="10" max="100" /></div>
+        <div class="oxigen_pb progressbar">Oxigen <progress value="50" max="100" /></div>
+      </div>
+
+    </div>
     <div class="grid_6 panel_a">Panel A</div>
     <div class="grid_6 panel_b">Panel B</div>
 </div>
