@@ -2,6 +2,7 @@ body {
     background-image: url('../assets/spacebg.jpg');
     background-attachment: fixed;
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    color: #EEE;
 }
 
 /* Visualization styles */
@@ -35,6 +36,51 @@ body {
     width: 100%;
 }
 
+/* Captain's log and Newsfeed */
+
+#caplog, #nfeed{
+    padding-left: 0px;
+    padding-top: 0;
+    padding-right: 0px;
+}
+
+.log_date {
+    color: #ff0;
+    margin-right: 0.5em;
+    font-weight: bold;
+}
+
+li.caplog, li.newsfeed{
+    border-bottom: 1px solid #518bc9;
+    min-height: 50px;
+    list-style: none;
+    display: block;
+    padding-top: 5px;
+    padding-left: 45px;
+    padding-right: 0px;
+    padding-bottom: 5px;
+}
+
+li.log_warning{
+    background-image: url('../assets/warning.svg');
+    background-size: 45px;
+    background-attachment: 10 0;
+    background-repeat: no-repeat;
+}
+
+li.log_plant{
+    background-image: url('../assets/plantfood.svg');
+    background-size: 45px;
+    background-attachment: 10 0;
+    background-repeat: no-repeat;
+}
+
+.log_info {
+
+}
+
+
+
 /* Sidebar Styles */
 .sidebar {
     box-sizing: border-box;
@@ -50,6 +96,7 @@ body {
     margin-bottom: 0.25em;
     text-align: center;
     background-color: #053a4b;
+
     text-transform:uppercase;
 }
 
@@ -123,4 +170,7 @@ svg#ship_planner {
 .progressbar progress {
 transition: all 2s;
 -webkit-transition: all 2s; /* Safari */
+}
+.crew_status {
+    z-index: 150;
 }

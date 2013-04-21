@@ -2,6 +2,7 @@ $(document).ready(function(){
 
 
 	//Enable when main page done.
+	setTimeout(alert,10000);
 	//setTimeout(alert,10000);
 	$('#pop').click(changeEmergencyScreen);
 	function alert(){
@@ -11,7 +12,7 @@ $(document).ready(function(){
 			onClose: changeEmergencyScreen
         });
 	}
-	
+
 	function handlerIn(){
 		$("#quote_water").hide();
 		$("#empty_water").toggle();
@@ -24,14 +25,14 @@ $(document).ready(function(){
 		$('.fire1').bPopup({
             speed: 450,
             transition: 'slideDown',
-			
+
         });
 	}
 	function solveEmergency2(){
 		$('.fire2').bPopup({
             speed: 450,
             transition: 'slideDown',
-			
+
         });
 	}
 
