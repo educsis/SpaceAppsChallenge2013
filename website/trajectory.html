@@ -8,9 +8,9 @@
   <script type='text/javascript' src='libs/jquery.bpopup.min.js'></script>
   <script type='text/javascript' src='libs/d3.js'></script>
 
-  <script type='text/javascript' src='http://code.jquery.com/ui/1.10.2/jquery-ui.js'></script>
-  <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css">
-  
+  <script type='text/javascript' src='libs/jquery-ui.js'></script>
+  <link rel="stylesheet" type="text/css" href="libs/jquery-ui.css">
+
   <script type='text/javascript' src='js/emergency.js'></script>
   <script type='text/javascript' src='js/ship_setup.js'></script>
 
@@ -86,7 +86,7 @@
 	context.lineWidth = 5;
 	context.strokeStyle = '#EB5E00';
 	var speed = 58,angleOffset = Math.PI;
-	
+
 	function polarToCart(angle,r){
 		var coords = {
 			x:r*Math.cos(angle),
@@ -94,11 +94,11 @@
 		};
 		return coords;
 	}
-	
+
 	function trajectory(angle){
 		return angle*speed;
 	}
-	
+
 	function showTrajectory(center){
 		context.moveTo(center.x,center.y);
 		context.beginPath();
@@ -110,13 +110,13 @@
 		}
 		context.stroke();
 	}
-	
+
 	var canvasCenter = {
 		x:100,
 		y:context.canvas.height/2,
 	}
 	showTrajectory(canvasCenter);
-	
+
 	$(document).ready(function(){
 		$('#force_slider').slider({
 			min:15,
