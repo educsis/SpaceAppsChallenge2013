@@ -4,11 +4,11 @@ function setupShipPlanning() {
         grid[i] = new Array(5);
     }
 
-    var SVG = d3.select("#visual")
-        .append("svg:svg")
+    var SVG = d3.select("#ship_planner");
+        /*.append("svg:svg")
         .attr("id", "ship_planner")
         .attr("width", "100%")
-        .attr("height", 620);
+        .attr("height", 620);*/
 
     SVG.append("svg:g")
         .attr("id", "ship")
@@ -35,15 +35,16 @@ function setupShipPlanning() {
 
     SVG.append("svg:rect")
     .attr("id", "blueSquare")
-    .attr("x", 0)
-    .attr("y", 0)
+    .attr("x", 100)
+    .attr("y", 100)
     .attr("width", 75)
     .attr("height", 75)
-    .attr("fill", "blue")
+    //.attr("fill", "blue")
     .style("cursor", "pointer")
     .call(d3.behavior.drag()
           .on("drag", move)
           .on("dragend", soltar));
+
 
     var dragTarget;
     function move(){
@@ -74,5 +75,5 @@ function setupShipPlanning() {
 }
 
 $(document).ready( function() {
-    //setupShipPlanning();
+    setupShipPlanning();
 });
