@@ -10,6 +10,10 @@
   <link rel="stylesheet" type="text/css" href="css/main.css">
   <link rel="stylesheet" type="text/css" href="css/emergency.css">
   <link rel="stylesheet" type="text/css" href="css/960_16_col.css">
+  <script type='text/javascript' src='js/ship_setup.js'></script>
+
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <link rel="stylesheet" type="text/css" href="css/ship.css">
 
   <style type='text/css'>
 
@@ -25,11 +29,11 @@
 	
 	function handlerIn(){
 		$("#quote_water").hide();
-		$("#empty_water").show();
+		$("#empty_water").toggle();
 	}
 	function handlerOut(){
 		$("#empty_water").hide();
-		$("#quote_water").show();
+		$("#quote_water").toggle();
 	}
 	function solveEmergency(){
 		$('.fire1').bPopup({
@@ -59,17 +63,29 @@
 </head>
 <body>
   <div class="container_16">
-    <div class="grid_16 progress_display">
-      <div class="position_updates"></div>
+    <div class="grid_16 progress_display semi_transparent">
+      <div class="position_updates">
+        <img id="viz_earth" src="assets/earth.svg" height="85" alt="Earth"/>
+        <img id="viz_iss" src="assets/iss.svg" height="35" alt="Earth"/>
+        <img id="viz_moon" src="assets/moon.svg" height="45" alt="Earth"/>
+        <img id="viz_mars" src="assets/mars.svg" height="65" alt="Earth"/>
+      </div>
     </div>
     <div class="grid_4 sidebar">
       <div class="main_status">
-        <div id="fuel_pb" class="progressbar">Fuel <progress value="70" max="100" /></div>
-        <div id="water_pb" class="progressbar">Water <progress value="10" max="100" /></div>
-        <div id="oxigen_pb" class="progressbar">Oxigen <progress value="50" max="100" /></div>
+        <h3 class="status_title">Main Status</h3>
+        <div id="fuel_pb" class="progressbar"><img src="assets/fuel.svg" height="35" alt="Fuel"/><progress value="70" max="100" class="good" /></div>
+        <div id="water_pb" class="progressbar"><img src="assets/water.svg" height="35" alt="Water"/> <progress value="10" max="100" class="critical" /></div>
+        <div id="oxigen_pb" class="progressbar"><img src="assets/oxygen.svg" height="35" alt="Oxygen"/><progress value="50" max="100" class="warning" /></div>
+      </div>
+
+      <div class="crew_status">
+        <h3 class="status_title">Crew Health &amp; Mood</h3>
+
       </div>
 
     </div>
+
 	
 	
 	<div id = 'emergency_a' class="grid_6  semi_transparent " >
