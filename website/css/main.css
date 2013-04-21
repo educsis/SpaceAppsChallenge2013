@@ -1,6 +1,7 @@
 body {
     background-image: url('../assets/spacebg.jpg');
     background-attachment: fixed;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 
 /* Sidebar Styles */
@@ -11,12 +12,14 @@ body {
     border: solid 1px #518bc9;
 }
 .status_title {
+    font-size: 1em;
     margin: 0;
-    padding-top: 0.25em;
-    padding-bottom: 0.25em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    margin-bottom: 0.25em;
     text-align: center;
     background-color: #053a4b;
-
+    text-transform:uppercase;
 }
 
 #visual {
@@ -37,26 +40,43 @@ body {
 .progressbar progress::-webkit-progress-bar {
     background-color: #08424d;
 }
-.progressbar progress::-webkit-progress-value {
+
+/* Default and Good progressbar color */
+.progressbar progress::-webkit-progress-value, .progressbar progress.good::-webkit-progress-value {
     background: #a5c956;
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #cdeb8e), color-stop(100%, #a5c956));
+    /*  TODO: add gradients **/
+    /*  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #cdeb8e), color-stop(100%, #a5c956)); /* */
 }
+
+/* Warning progressbar color */
+.progressbar progress.warning::-webkit-progress-value {
+    background: #FF0;
+}
+/* Critical progressbar color */
+.progressbar progress.critical::-webkit-progress-value {
+    background: #F00;
+}
+
 .progress_display {
     background-color: #0FF;
     height: 100px;
     margin-bottom: 20px;
 }
 
+/* Panels */
+.semi_transparent {
+    background-color: rgba(73, 164, 168, 0.25);
+    border: 1px solid #294666;
+    box-sizing: border-box;
+}
 
 /* Left Panel */
 .panel_a {
-    background-color: #0F0;
     min-height: 500px;
 }
-/* Right Panel */
 
+/* Right Panel */
 .panel_b {
-    background-color: #F00;
     min-height: 500px;
 }
 
