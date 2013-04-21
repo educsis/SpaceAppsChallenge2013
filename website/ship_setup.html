@@ -9,9 +9,9 @@
   <script type='text/javascript' src='libs/d3.js'></script>
 
   <script type='text/javascript' src='js/ship_setup.js'></script>
+  <script type='text/javascript' src='js/mainframe.js'></script>
 
   <link rel="stylesheet" type="text/css" href="css/main.css">
-  <link rel="stylesheet" type="text/css" href="css/ship.css">
   <link rel="stylesheet" type="text/css" href="css/emergency.css">
   <link rel="stylesheet" type="text/css" href="css/960_16_col.css">
 
@@ -57,25 +57,29 @@
     <div class="grid_4 sidebar">
       <div class="main_status">
         <h3 class="status_title">Main Status</h3>
-        <div id="fuel_pb" class="progressbar"><img src="assets/fuel.svg" height="35" alt="Fuel"/><progress value="0" max="100" class="critical" /></div>
-        <div id="water_pb" class="progressbar"><img src="assets/water.svg" height="35" alt="Water"/> <progress value="0" max="100" class="critical" /></div>
-        <div id="oxigen_pb" class="progressbar"><img src="assets/oxygen.svg" height="35" alt="Oxygen"/><progress value="0" max="100" class="critical" /></div>
+        <div id="fuel_pb" class="progressbar"><img src="assets/fuel.svg" height="35" alt="Fuel"/><progress value="70" max="100" class="good" /></div>
+        <div id="water_pb" class="progressbar"><img src="assets/water.svg" height="35" alt="Water"/> <progress value="10" max="100" class="critical" /></div>
+        <div id="oxigen_pb" class="progressbar"><img src="assets/oxygen.svg" height="35" alt="Oxygen"/><progress value="50" max="100" class="warning" /></div>
       </div>
 
       <div class="crew_status">
-        <h3 class="status_title">Crew Information</h3>
-        <img src="assets/crew1.svg" height="75" alt="person"/>
-        <input type="text" id="fb-user" >
-        <img src="assets/crew2.svg" height="75" alt="person"/>
-        <input type="text" id="fb-user" >
-        <img src="assets/crew3.svg" height="75" alt="person"/>
-        <input type="text" id="fb-user" >
+        <h3 class="status_title">Crew Health &amp; Mood</h3>
+
       </div>
 
     </div>
 
-  <div id = 'principal_a' class="grid_6 panel_a semi_transparent">Panel A</div>
-  <div id = 'principal_b' class="grid_6 panel_b semi_transparent">Panel B</div>
+  <div id='newsfeed' class="grid_6 panel_a semi_transparent">
+    <h3 class="status_title">Newsfeed</h3>
+    <ul id="nfeed">
+    </ul>
+  </div>
+  <div id='captains_log' class="grid_6 panel_b semi_transparent">
+    <h3 class="status_title">Captain's Log</h3>
+    <ul id="caplog">
+      <li class="caplog"><span class="log_date">T22:29:01.888Z</span><span class="log_info">Solar storm averted.</span></li>
+    </ul>
+  </div>
 </div>
 
 
