@@ -2,7 +2,7 @@ $(document).ready(function(){
 
 
 	//Enable when main page done.
-	//setTimeout(alert,1000);
+	setTimeout(alert,10000);
 
 	function alert(){
 		$('#popDiv').bPopup({
