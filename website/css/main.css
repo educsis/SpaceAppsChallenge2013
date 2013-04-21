@@ -9,6 +9,9 @@ body {
     color: #EEE;
 }
 
+#visual {
+    position: relative;
+}
 .progressbar progress {
     width: 150px;
     margin-right: 14px;
@@ -50,4 +53,8 @@ body {
 /* Header */
 .position_updates {
     height: 250px;
+}
+#ship_planner {
+    position: absolute;
+    left: 0;
 }
