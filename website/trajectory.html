@@ -137,6 +137,12 @@
 			slide:function(ev,ui){
 				angleOffset = ui.value;
 				showTrajectory(canvasCenter);
+				if((speed <= 55 && speed >= 50) && (angleOffset <= 1.2 && angleOffset >= 1)){
+					$('#trajectory_success').show('fast');
+					console.log('Trajectory Success');
+				}else{
+					$('#trajectory_success').hide();
+				}
 			}
 		});
 	});
