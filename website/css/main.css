@@ -171,3 +171,6 @@ svg#ship_planner {
 transition: all 2s;
 -webkit-transition: all 2s; /* Safari */
 }
+.crew_status {
+    z-index: 150;
+}
