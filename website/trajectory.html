@@ -23,8 +23,13 @@
 </head>
 <body>
   <div id="visual" class="container_16">
-    <div class="grid_16 progress_display">
-      <div class="position_updates"></div>
+    <div class="grid_16 progress_display semi_transparent">
+      <div class="position_updates">
+        <img id="viz_earth" src="assets/earth.svg" height="85" alt="Earth"/>
+        <img id="viz_iss" src="assets/iss.svg" height="35" alt="Earth"/>
+        <img id="viz_moon" src="assets/moon.svg" height="45" alt="Earth"/>
+        <img id="viz_mars" src="assets/mars.svg" height="65" alt="Earth"/>
+      </div>
     </div>
     <div class="grid_4 sidebar">
       <div class="main_status">
@@ -36,9 +41,7 @@
 
       <div class="crew_status">
         <h3 class="status_title">Crew Health &amp; Mood</h3>
-        <div id="fuel_pb" class="progressbar"><img src="assets/fuel.svg" height="35" alt="Fuel"/><progress value="70" max="100" class="good" /></div>
-        <div id="water_pb" class="progressbar"><img src="assets/water.svg" height="35" alt="Water"/> <progress value="10" max="100" class="critical" /></div>
-        <div id="oxigen_pb" class="progressbar"><img src="assets/oxygen.svg" height="35" alt="Oxygen"/><progress value="50" max="100" class="warning" /></div>
+
       </div>
 
     </div>
