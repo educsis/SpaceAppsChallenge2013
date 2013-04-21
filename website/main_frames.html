@@ -7,11 +7,48 @@
   <script type='text/javascript' src='libs/jquery.bpopup.min.js'></script>
   <script type='text/javascript' src='libs/d3.js'></script>
   <script type='text/javascript' src='js/emergency.js'></script>
+<<<<<<< HEAD
   <link rel="stylesheet" type="text/css" href="css/main.css">
+=======
+  <script type='text/javascript' src='js/ship_setup.js'></script>
+>>>>>>> ship_setup.js added
   <link rel="stylesheet" type="text/css" href="css/emergency.css">
   <link rel="stylesheet" type="text/css" href="css/960_16_col.css">
 
   <style type='text/css'>
+<<<<<<< HEAD
+=======
+  body{
+    background-image: url('assets/spacebg.jpg');
+    background-attachment: fixed;
+  }
+  .progress_display{
+    background-color: #0FF;
+    height: 100px;
+    margin-bottom: 20px;
+  }
+  .sidebar {
+    background-color: #FF0;
+  }
+  .panel_a {
+    background-color: #0F0;
+    min-height: 500px;
+  }
+  .panel_b {
+    background-color: #F00;
+    min-height: 500px;
+  }
+  .position_updates{
+    height: 250px;
+  }
+  svg#ship_planner {
+    position: absolute;
+    left: 0;
+  }
+  </style>
+
+
+>>>>>>> ship_setup.js added
 
   </style>
   <script type='text/javascript'>//<![CDATA[
@@ -24,7 +61,7 @@
 
 </head>
 <body>
-  <div class="container_16">
+  <div id="visual" class="container_16">
     <div class="grid_16 progress_display">
       <div class="position_updates"></div>
     </div>
@@ -36,6 +73,7 @@
       </div>
 
     </div>
+<<<<<<< HEAD
 	
 	
     <div id = 'principal_a' class="grid_6 panel_a">Panel A</div>
@@ -49,10 +87,18 @@
 <div id='popDiv' >
 	<img src="assets/alert.svg" height="400" alt="Red planet"/>
 	<input id = 'pop' class='b-close' type='button' value = 'Solve'/>
+=======
+    <div class="grid_6 panel_a">Panel A</div>
+    <div class="grid_6 panel_b">Panel B</div>
+>>>>>>> ship_setup.js added
+</div>
+
+
+<div id='popDiv' >
+  <img src="assets/alert.svg" height="400" alt="Red planet"/>
 </div>
 
 </body>
 
 
 </html>
-
