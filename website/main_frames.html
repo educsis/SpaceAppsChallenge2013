@@ -25,9 +25,16 @@
     <div class="grid_4 sidebar">
       <div class="main_status">
         <h3 class="status_title">Main Status</h3>
-        <div id="fuel_pb" class="progressbar"><img src="assets/fuel.svg" height="35" alt="Fuel"/><progress value="70" max="100" /></div>
-        <div id="water_pb" class="progressbar"><img src="assets/water.svg" height="35" alt="Water"/> <progress value="10" max="100" /></div>
-        <div id="oxigen_pb" class="progressbar"><img src="assets/oxygen.svg" height="35" alt="Oxygen"/><progress value="50" max="100" /></div>
+        <div id="fuel_pb" class="progressbar"><img src="assets/fuel.svg" height="35" alt="Fuel"/><progress value="70" max="100" class="good" /></div>
+        <div id="water_pb" class="progressbar"><img src="assets/water.svg" height="35" alt="Water"/> <progress value="10" max="100" class="critical" /></div>
+        <div id="oxigen_pb" class="progressbar"><img src="assets/oxygen.svg" height="35" alt="Oxygen"/><progress value="50" max="100" class="warning" /></div>
+      </div>
+
+      <div class="crew_status">
+        <h3 class="status_title">Crew Health &amp; Mood</h3>
+        <div id="fuel_pb" class="progressbar"><img src="assets/fuel.svg" height="35" alt="Fuel"/><progress value="70" max="100" class="good" /></div>
+        <div id="water_pb" class="progressbar"><img src="assets/water.svg" height="35" alt="Water"/> <progress value="10" max="100" class="critical" /></div>
+        <div id="oxigen_pb" class="progressbar"><img src="assets/oxygen.svg" height="35" alt="Oxygen"/><progress value="50" max="100" class="warning" /></div>
       </div>
 
     </div>
