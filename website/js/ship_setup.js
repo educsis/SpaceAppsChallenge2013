@@ -130,6 +130,9 @@ function setupShipPlanning() {
     }
 
     var pos;
+    var water_pr = 0,
+        fuel_pr = 0,
+        oxygen_pr = 0;
     function soltar() {
         this.parentNode.appendChild(this);
         dragTarget = d3.select(this);
@@ -144,6 +147,24 @@ function setupShipPlanning() {
           dragTarget
             .attr("x", (pos[0] * 75) + 270)
             .attr("y", (pos[1] * 75) + 182.5);
+            if (pos[0] == 0) {
+                water_pr += 10;
+                $("#water_pb progress").attr("value", (water_pr));
+                createWater();
+            }
+            if (pos[0] == 1) {
+                fuel_pr += 10;
+                $("#fuel_pb progress").attr("value", (fuel_pr));
+                createFuel();
+            }
+            if (pos[0] == 2) {
+                oxygen_pr += 10;
+                $("#oxigen_pb progress").attr("value", (oxygen_pr));
+                createOxygen();
+            }
+            if (pos[0] == 3) {
+                createPlantfood();
+            }
         }
     }
 }
