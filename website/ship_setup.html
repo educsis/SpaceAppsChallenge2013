@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>4A Demo</title>
+
+  <script type='text/javascript' src='libs/jquery.js'></script>
+  <script type='text/javascript' src='libs/jquery.bpopup.min.js'></script>
+  <script type='text/javascript' src='libs/d3.js'></script>
+
+  <script type='text/javascript' src='js/emergency.js'></script>
+  <script type='text/javascript' src='js/ship_setup.js'></script>
+
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <link rel="stylesheet" type="text/css" href="css/ship.css">
+  <link rel="stylesheet" type="text/css" href="css/emergency.css">
+  <link rel="stylesheet" type="text/css" href="css/960_16_col.css">
+
+
+</head>
+<body>
+  <div id="visual" class="container_16">
+    <svg width="100%" height="620" id="ship_planner">
+      <defs>
+        <pattern id="fuel_box" patternUnits="objectBoundingBox" width="75" height="75" x="0" y="0">
+          <image xlink:href="assets/fuel.svg" width="75" height="75" x="0" y="0" />
+        </pattern>
+      </defs>
+    </svg>
+
+    <div class="grid_16 progress_display">
+      <div class="position_updates"></div>
+    </div>
+    <div class="grid_4 sidebar">
+      <div class="main_status">
+        <h3 class="status_title">Main Status</h3>
+        <div id="fuel_pb" class="progressbar"><img src="assets/fuel.svg" height="35" alt="Fuel"/><progress value="70" max="100" class="good" /></div>
+        <div id="water_pb" class="progressbar"><img src="assets/water.svg" height="35" alt="Water"/> <progress value="10" max="100" class="critical" /></div>
+        <div id="oxigen_pb" class="progressbar"><img src="assets/oxygen.svg" height="35" alt="Oxygen"/><progress value="50" max="100" class="warning" /></div>
+      </div>
+
+      <div class="crew_status">
+        <h3 class="status_title">Crew Health &amp; Mood</h3>
+        <div id="fuel_pb" class="progressbar"><img src="assets/fuel.svg" height="35" alt="Fuel"/><progress value="70" max="100" class="good" /></div>
+        <div id="water_pb" class="progressbar"><img src="assets/water.svg" height="35" alt="Water"/> <progress value="10" max="100" class="critical" /></div>
+        <div id="oxigen_pb" class="progressbar"><img src="assets/oxygen.svg" height="35" alt="Oxygen"/><progress value="50" max="100" class="warning" /></div>
+      </div>
+
+    </div>
+
+  <div id = 'principal_a' class="grid_6 panel_a">Panel A</div>
+  <div id = 'principal_b' class="grid_6 panel_b">Panel B</div>
+</div>
+
+
+<div id='popDiv' >
+	<img src="assets/alert.svg" height="400" alt="Red planet"/>
+	<input id = 'pop' class='b-close' type='button' value = 'Solve'/>
+</div>
+
+
+
+
+</body>
+
+
+</html>
