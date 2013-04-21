@@ -4,6 +4,37 @@ body {
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 
+/* Visualization styles */
+
+#viz_earth {
+    position: absolute;
+    left: 20px;
+    margin: 7.5px 0;
+}
+
+#viz_iss {
+    position: absolute;
+    left: 150px;
+    margin: 32.5px 0;
+}
+
+#viz_moon {
+    position: absolute;
+    left: 300px;
+    margin: 27.5px 0;
+}
+
+#viz_mars {
+    position: absolute;
+    margin: 17.5px 0;
+    right: 20px;
+}
+#progress-earth{
+    position: absolute;
+    height: 20px;
+    width: 100%;
+}
+
 /* Sidebar Styles */
 .sidebar {
     box-sizing: border-box;
@@ -25,6 +56,7 @@ body {
 #visual {
     position: relative;
 }
+
 .progressbar progress {
     width: 150px;
     margin-right: 14px;
@@ -35,8 +67,8 @@ body {
     height: 18px;
     margin-top: 5px;
     margin-bottom: 5px;
-
 }
+
 .progressbar progress::-webkit-progress-bar {
     background-color: #08424d;
 }
